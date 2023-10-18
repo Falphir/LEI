@@ -1,7 +1,6 @@
-package ex2;
+package ex3;
 
 import java.io.*;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Shell {

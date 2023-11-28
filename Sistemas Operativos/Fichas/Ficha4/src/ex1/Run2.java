@@ -12,12 +12,9 @@ public class Run2 extends Thread{
     public void run() {
         String myname = Thread.currentThread().getName();
 
-        try {
-            share.setNumber(n);
-            Thread.sleep(n * 1000);
-            System.out.println("["+myname+"] Number: " + share.getNumber());
-            share.setName("share.name definido por : " +myname);
-        } catch (InterruptedException e) {}
+        share.setNumber(n);
+        System.out.println("["+myname+"] Number: " + share.getNumber());
+        share.setName("share.name definido por : " +myname);
     }
 
     public void setShare(ShareObj s) {

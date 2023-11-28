@@ -7,16 +7,11 @@ public class Run extends Thread{
         this.share = s;
     }
 
-    public void run() {
+    public synchronized void run() {
         String myName = Thread.currentThread().getName();
-        try {
-            while (true) {
-                if (Thread.interrupted()) return;
-                Thread.sleep(1000);
-                System.out.println("[" + myName + "] Number: " + share.getNumber()+ "(" + share.getName()+ ")");
-            }
-        } catch (InterruptedException e) {
-
+        while (true) {
+            if (Thread.interrupted()) return;
+            System.out.println("[" + myName + "] Number: " + share.getNumber()+ "(" + share.getName()+ ")");
         }
     }
 
